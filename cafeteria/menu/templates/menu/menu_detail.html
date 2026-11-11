@@ -1,0 +1,21 @@
+
+{% extends 'menu/base.html' %}
+
+{% block title %}{{ item.name }} | Cafeteria{% endblock %}
+
+{% block content %}
+
+<h2>{{ item.name }}</h2>
+
+<p>Price: ₹{{ item.price }}</p>
+<p>Description: {{ item.description }}</p>
+
+{% if item.available %}
+    <p>Available for ordering</p>
+{% else %}
+    <p>Currently unavailable</p>
+{% endif %}
+
+<a href="/">Back to Menu</a>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+
+{% extends 'menu/base.html' %}
+
+{% block title %}Home | Cafeteria{% endblock %}
+
+{% block content %}
+
+<h2>Today's Menu</h2>
+
+{% for item in menu_items %}
+    <div>
+        <h3>{{ item.name }}</h3>
+        <p>Price: ₹{{ item.price }}</p>
+
+        {% if item.available %}
+            <p>Available</p>
+        {% else %}
+            <p>Currently Unavailable</p>
+        {% endif %}
+    </div>
+{% empty %}
+    <p>No menu items available.</p>
+{% endfor %}
+
+{% endblock %}
